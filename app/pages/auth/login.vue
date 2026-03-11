@@ -3,6 +3,7 @@ definePageMeta({
   layout: false,
 });
 
+const config = useRuntimeConfig();
 const { login } = useAuth();
 const router = useRouter();
 
@@ -104,6 +105,19 @@ async function handleSubmit() {
             Sign In
           </UiButton>
         </form>
+
+        <div
+          v-if="config.public.demo"
+          class="mt-6 p-4 rounded-md bg-blue-50 border border-blue-200"
+        >
+          <p class="text-sm font-medium text-blue-800 mb-2">Demo credentials</p>
+          <p class="text-sm text-blue-700">
+            <span class="font-medium">Email:</span> demo@demo.com
+          </p>
+          <p class="text-sm text-blue-700">
+            <span class="font-medium">Password:</span> 12345678
+          </p>
+        </div>
       </div>
     </div>
   </div>

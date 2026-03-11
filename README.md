@@ -1,3 +1,5 @@
+Want to vibe code this App ? It's recommended to use this [$10 Coding AI tool with OpenCode](https://z.ai/subscribe?ic=SVEALL4DWW) 🚀 _(+10% off via this link!)_ - the AGENTS.md file is optimized for it.
+
 # OpenStock
 
 A modern, self-hosted inventory and stock management system built with Nuxt 4 and Cloudflare.

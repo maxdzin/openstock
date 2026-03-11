@@ -21,6 +21,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // Server-only (not exposed to client)
     adminSecretKey: '', // Set via NUXT_ADMIN_SECRET_KEY env var
+    // Public config (exposed to client)
+    public: {
+      demo: false, // Set via NUXT_PUBLIC_DEMO env var
+    },
   },
 
   // Pinia configuration

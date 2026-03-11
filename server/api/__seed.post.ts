@@ -44,15 +44,23 @@ export default defineEventHandler(async (event) => {
 
   const db = useDB();
 
-  await db.delete(stockMovements);
-  await db.delete(sellingPriceHistory);
-  await db.delete(supplierPriceHistory);
-  await db.delete(supplierPrices);
-  await db.delete(productVariants);
-  await db.delete(products);
-  await db.delete(suppliers);
-  await db.delete(categories);
-  await db.delete(taxes);
+  async function safeDelete(table: any) {
+    try {
+      await db.delete(table);
+    } catch (e) {
+      // Table might not exist yet, ignore
+    }
+  }
+
+  await safeDelete(stockMovements);
+  await safeDelete(sellingPriceHistory);
+  await safeDelete(supplierPriceHistory);
+  await safeDelete(supplierPrices);
+  await safeDelete(productVariants);
+  await safeDelete(products);
+  await safeDelete(suppliers);
+  await safeDelete(categories);
+  await safeDelete(taxes);
 
   async function insertInBatches<T>(
     table: any,
