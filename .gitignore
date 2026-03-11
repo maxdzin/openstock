@@ -25,3 +25,6 @@ logs
 
 # Wrangler local state (D1 database, etc.)
 .wrangler/
+
+# Wrangler config (contains production IDs)
+wrangler.toml
